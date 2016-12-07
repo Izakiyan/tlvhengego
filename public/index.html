@@ -11,14 +11,22 @@
   <body ng-app="henge">
 
     <div ng-controller="hengeCtrl">
-      <button ng-click="dislpay()"> Dispaly </button>
+  Name: <input ng-model="name">
+  <h1>You entered: {{name}}</h1>
+  <p>
+    {{firstname}}
+  </p>
+
+<h1 ng-click="changeName()"> what{{lastname}}</h1>
+
     </div>
-  
+
+
 
 
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="hengeCtrl.js"></script>
-    <script type="text/javascript" src="service.js"></script>
+    <script type="text/javascript" src="serviceHenge.js"></script>
   </body>
 
 

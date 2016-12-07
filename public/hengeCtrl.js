@@ -1,7 +1,22 @@
-app.controller('hengeCtrl', function($scope, service){
+app.controller('hengeCtrl', function($scope, serviceHenge){
 
-  $scope.display = function(){
-    service.display();
-  };
+  serviceHenge.getAll()
+
 
 });
+
+
+
+
+
+// .then(function () {
+//   $scope.hengeMoment = serviceHenge.hengeMoment
+//   });
+//
+//
+//
+// $scope.name = "hello";
+// $scope.firstname = "oriel"
+// $scope.changeName = function() {
+//       $scope.lastname = "Nelly"
+//     };

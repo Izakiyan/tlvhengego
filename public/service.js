@@ -1,8 +1,0 @@
-app.factory('service',  function () {
-
-  
-
-
-
-
-});
