@@ -5,28 +5,39 @@
     <title>henge-tlv</title>
     <script type="text/javascript" src="node_modules/angular/angular.js"></script>
    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+   <link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
   </head>
 
 
   <body ng-app="henge">
 
     <div ng-controller="hengeCtrl">
-  Name: <input ng-model="name">
-  <h1>You entered: {{name}}</h1>
-  <p>
-    {{firstname}}
-  </p>
+      <h1> asdfasdf</h1>
+      <p>{{final}}</p>
 
-<h1 ng-click="changeName()"> what{{lastname}}</h1>
+
+      <span class="addtocalendar atc-style-blue">
+        <var class="atc_event">
+            <var class="atc_date_start">2016-05-04 12:00:00</var>
+            <var class="atc_date_end">2016-05-04 18:00:00</var>
+            <var class="atc_timezone">Europe/London</var>
+            <var class="atc_title">Star Wars Day Party</var>
+            <var class="atc_description">May the force be with you</var>
+            <var class="atc_location">Tatooine</var>
+            <var class="atc_organizer">Luke Skywalker</var>
+            <var class="atc_organizer_email">luke@starwars.com}}</var>
+        </var>
+    </span>
 
     </div>
 
 
 
-
+    <script type="text/javascript" src="calendar.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="hengeCtrl.js"></script>
     <script type="text/javascript" src="serviceHenge.js"></script>
+
   </body>
 
 
