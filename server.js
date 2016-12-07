@@ -19,11 +19,16 @@ app.use('/node_modules', express.static('node_modules'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-// get today's sunset time in specific place
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
-app.get('/', function(req, res){ // Not sure just yet!
+app.get('/', function(req, res, next) {
   res.sendFile(__dirname + "/index.html");
 });
+
 
 var getSunAngles = function(){
   rays = [];

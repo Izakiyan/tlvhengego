@@ -1,7 +1,12 @@
 app.controller('hengeCtrl', function($scope, serviceHenge){
 
-  serviceHenge.getAll()
+  serviceHenge.getAll().then(function () {
+    serviceHenge.merge();
 
+    });
+
+    $scope.henge = serviceHenge.final;
+    
 
 });
 
