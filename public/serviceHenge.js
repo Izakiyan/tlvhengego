@@ -5,7 +5,7 @@ app.factory('serviceHenge', ['$http', function ($http) {
   var hengeMoment = [];
 
   var hengeStreet = [
-{"streetName":"Bograshov","streetAngle":300,"xW":32.078043,"yW":34.76765,"xE":32.074106,"yE":34.775262},
+{"streetName":"Bograshov","streetAngle":299,"xW":32.078043,"yW":34.76765,"xE":32.074106,"yE":34.775262},
 {"streetName":"HaShalom","streetAngle":291,"xW":32.073205,"yW":34.792106,"xE":32.070341,"yE":34.801687},
 {"streetName":"Daniel (14)","streetAngle":291,"xW":32.068878,"yW":34.763334,"xE":32.068361,"yE":34.764893},
 {"streetName":"Yona HaNavi","streetAngle":289,"xW":32.07306,"yW":34.764986,"xE":32.071942,"yE":34.769106},
@@ -43,24 +43,14 @@ app.factory('serviceHenge', ['$http', function ($http) {
   };
 
   var showMatch = function(final){
+    console.log(final);
     var date = "";
         for (var i = 0; i < final.length; i++){
-          date = final[i].sunMatch.date;
+          date = final[i].sunMatch.time;
           console.log(date);
       };
     };
 
-    var event = function (){
-      var next = {
-        date_start: date_start,
-        date_end: date_end,
-        title: title,
-        description: description,
-        location: location,
-        organizer: organizer,
-        feedbackmail: feedbackmail
-      }
-    };
 
   var getAll = function () {
     return $http.get('/streets').success(function (data) {

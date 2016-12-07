@@ -42,7 +42,7 @@ for (var d = start; d <= end; d.setDate(d.getDate() + 1)){
   var angles = SunCalc.getPosition(sunset, 32.0353, 34.4628).azimuth;
   angles = angles * (180/Math.PI) + 180;
   // rays.push({date: a, azimuth: angles});
-  var suns = new Sunset({date: a, azimuth: angles});
+  var suns = new Sunset({azimuth: angles, time: sunset});
   suns.save(function (err) {
   if (err) return handleError(err);
     });
@@ -50,7 +50,7 @@ for (var d = start; d <= end; d.setDate(d.getDate() + 1)){
 };
 // getSunAngles()
 // console.log(rays);
-
+// //
 app.get('/streets', function (req, res) {
   Sunset.find(function (error, streets) {
     res.send(streets);
