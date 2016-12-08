@@ -330,13 +330,23 @@ button{
 	outline: none!important;
 }
 
-.btn-wire{
+/*.btn-wire{
 	background:transparent!important;
 	border:2px solid transparent;
 }
 .btn-wire:hover{
 	background:transparent!important;
 	border:2px solid transparent;
+}*/
+.btn-wire{
+    /*background:transparent!important;*/
+    border:4px solid transparent;
+    background-color: rgba(0,0,0,0.6);
+}
+.btn-wire:hover{
+    /*background:transparent!important;*/
+    border:4px solid transparent;
+    background-color: rgba(0,0,0,0.6);
 }
 .btn-xl{
 	padding: 16px 40px;
@@ -525,8 +535,8 @@ a[data-lightbox]:hover img{
 /* Button colour styles */
 
 .wire-btn-carmine-pink{
-	color:#F35342!important;
-	border-color:#F35342!important;
+	color:rgba(243,83,66,1)!important;
+  border-color:rgba(243,83,66,1)!important;
 }
 .wire-btn-white{
 	color:#ffffff!important;
