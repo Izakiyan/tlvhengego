@@ -42,21 +42,25 @@ for (var d = start; d <= end; d.setDate(d.getDate() + 1)){
   var angles = SunCalc.getPosition(sunset, 32.0353, 34.4628).azimuth;
   angles = angles * (180/Math.PI) + 180;
   // rays.push({date: a, azimuth: angles});
-  var suns = new Sunset({date: a, azimuth: angles});
+  var suns = new Sunset({azimuth: angles, time: sunset});
   suns.save(function (err) {
   if (err) return handleError(err);
     });
   };
 };
+//************** Turn On To Add To Collection "Sunsets"
 // getSunAngles()
 // console.log(rays);
+//************** Turn Off After
 
+//************** Turn On AFTER Collection "Sunsets" is filled  up
 app.get('/streets', function (req, res) {
   Sunset.find(function (error, streets) {
     res.send(streets);
     console.log(streets);
   });
 });
+//************** Turn Off to clear Collection "Sunsets"
 
 app.listen(8000);
 
