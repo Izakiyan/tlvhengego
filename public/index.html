@@ -65,19 +65,21 @@
         <div class="container bloc-xl">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
-                    <h1 class="text-center mg-lg tc-white"> Manhattanhenge in Tel Aviv
+                    <h1 class="text-center mg-lg tc-white"> Manhattanhenge in <span style="color:rgba(243,83,66,1)">Tel Aviv</span>
                     <!-- typer, cool amination, not to display now -->
                     <!-- <span data-typer-targets="WEB DESIGN,WEB DEVELOPMENT,PROMOTION"></span>-->
                     </h1>
 
                     <p class="text-center mg-lg tc-white-less">
-                      Twice a year the sun aligns with the midtown grid in NYC,
-                       days we call, Manhattanhenge. Now you can discover henge
-                       events happening in Tel Aviv, if you know when and where to look!
+                      Twice a year the sun aligns with the midtown grid in NYC. <br  />
+                      These days are called Manhattanhenge.<br /><br />
+
+                        Now you can discover henge
+                       events happening in <span style="color:rgba(243,83,66,1)">Tel Aviv</span>, if you know when and where to look!
                     </p>
                     <div class="text-center">
-                        <a target="_blank" class="btn  btn-xl btn-wire wire-btn-carmine-pink" ng-href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{henge[120].sunMatch.startime}}/{{henge[120].sunMatch.eventime}}&location={{henge[120].streetMatch.streetName}}&amp;text=Henge Sunset Tonight @ {{henge[120].streetMatch.streetName}} street!&amp;details=Hadas Was (NOT) Here!%0A%0A--%0Ahttp://TLVhenge.com
-">ADD TO CALENDAR</a>
+                        <a target="_blank" class="btn  btn-xl btn-wire wire-btn-carmine-pink" ng-href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{henge[120].sunMatch.startime}}/{{henge[120].sunMatch.eventime}}&location={{henge[120].streetMatch.streetName}}&amp;text=Henge Sunset Tonight @ {{henge[120].streetMatch.streetName}} street!&amp;details=Hadas, Brandon, Steven and Aaron Were (NOT) Here :P%0A%0A--%0Ahttp://TLVhenge.com
+                        ">#SaveTheDate</a>
                            <!-- <span class="addtocalendar atc-style-blue">
                              <var class="atc_event">
                                <var class="atc_date_start">2016-12-09 14:09:18</var>
@@ -101,6 +103,7 @@
     <div class="bloc l-bloc bgc-white" id="services">
         <div class="container bloc-lg">
             <div class="row">
+              <h2 class="text-center mg-md "> This is how it looks in NYC</h2>
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SsKmUf3jBPc"></iframe>
               </div>
@@ -151,7 +154,7 @@
         <div class="container bloc-lg">
             <div class="row">
                 <h2 class="text-center mg-md "> NYC MAP</h2>
-                <p style="text-align:center"> NY henge occurs twice a year, the first Manhattanhenge occurs around May 28, while the second occurs around July 12.</p>
+                <p style="text-align:center; font-size: 16px;"> NY henge occurs twice a year, the first Manhattanhenge occurs around <strong>May 28</strong>, while the second occurs around <strong>July 12</strong>.</p>
               <div class="embed-responsive embed-responsive-16by9">
               <iframe src="http://nychenge.com/map.html#13/40.7347/-73.9957/12/7" frameborder="0"></iframe>
                 <!-- <div class="col-sm-3 text-center">
@@ -178,18 +181,17 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h2 class="text-center mg-md ">
-                        #TLV_Henge
+                        Can You Get a Better Short of #TLV_Henge?
                     </h2>
 
-                    <p class="text-center sub-heading">
-                        Get your camara ready for the next TLV Henge!
-                    </p>
+
                 </div>
             </div>
             <div class="row voffset">
 
               <div class="col-sm-8">
                   <img src="img/HeroshotTH.jpg"/>
+                      <p class="text-center sub-heading" style="font-size: 16px"> Tel Aviv street grids are complex and asymetrical anlike NYC Manhattan island ;) <br /></p>
               </div>
                 <!-- <div class="col-sm-3">
                     <a href="#" data-lightbox="img/dribbble-preview.png" data-caption="Image description"><img
@@ -414,9 +416,11 @@
             <div style="padding:40px;">
               <div style="text-align:center">
                 <h3 style="color: rgba(243,83,66,1)">All Events</h3><br>
-                <p ng-repeat="event in henge track by $index">
+                <p ng-repeat="event in henge | orderBy:henge.sunMatch.time">
                   {{event.sunMatch.time}}<br>
-                  {{}}<!-- Street:  -->@ {{event.streetMatch.streetName}} // {{event.streetMatch.streetAngle}}&deg; //<br>
+                  {{}}<!-- Street:  -->@
+
+                  {{event.streetMatch.streetName}} // {{event.streetMatch.streetAngle}}&deg; //<br>
                   Sun Azimuth: {{event.sunMatch.azimuth}}&deg;<br>
                   ***************************</p>
                 </div>
