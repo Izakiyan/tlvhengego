@@ -5,8 +5,16 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var SunCalc = require('suncalc');
 
+var mongodbUri = 'mongodb://heroku_bk995c8d:al6k80dkudn1fepu2pu6vnfbb1@ds133418.mlab.com:33418/heroku_bk995c8d';
+
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/streets');;
+
+// var conn = mongoose.createConnection('mongodb:[//localhost/streets][,mongodbUri]')
+mongoose.connect(mongodbUri);
+// mongoose.connect('mongodb://localhost/streets');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
 
 var Sunset = require("./SunsetModel");
 var Henge = require("./HengeModel");
@@ -55,15 +63,15 @@ for (var d = start; d <= end; d.setDate(d.getDate() + 1)){
 app.get('/streets', function (req, res) {
   Sunset.find(function (error, streets) {
     res.send(streets);
-    console.log(streets);
+    // console.log(streets);
   });
 });
 
-app.listen(8000);
+// app.listen(8000);
 
-// server.listen(process.env.PORT || 3000, function() {
-//    console.log('Example app listening on port 3000!')
-// })
+server.listen(process.env.PORT || 3000, function() {
+   console.log('Example app listening on port 3000!')
+})
 
 
 
