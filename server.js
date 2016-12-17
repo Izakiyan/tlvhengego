@@ -21,6 +21,8 @@ var Henge = require("./HengeModel");
 
 var app = express();
 
+app.set('port', (process.env.PORT || 3000));
+
 app.use(express.static('public'));
 app.use('/node_modules', express.static('node_modules'));
 
@@ -67,11 +69,15 @@ app.get('/streets', function (req, res) {
   });
 });
 
-app.listen(3000);
+// app.listen(3000);
 
-server.listen(process.env.PORT || 3000, function() {
-   console.log('Example app listening on port 3000!')
-})
+// server.listen(process.env.PORT || 3000, function() {
+//    console.log('Example app listening on port 3000!')
+// })
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 
 
 
