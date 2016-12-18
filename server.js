@@ -1,23 +1,9 @@
 var express = require('express');
-// var http = require('http');
-// var request = require('request');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 var SunCalc = require('suncalc');
+var moment = require('moment')
 
-var mongodbUri = process.env.MONGODB_URI || require('./secrets').gitURL;
-
-mongoose.Promise = global.Promise;
-
-// var conn = mongoose.createConnection('mongodb:[//localhost/streets][,mongodbUri]')
-mongoose.connect(mongodbUri);
-// mongoose.connect('mongodb://localhost/streets');
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-
-var Sunset = require("./SunsetModel");
-var Henge = require("./HengeModel");
+var merge = require('./merge')
 
 var app = express();
 
@@ -29,45 +15,25 @@ app.use('/node_modules', express.static('node_modules'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+app.get('/sunsets', function(req, res) {
 
-app.get('/', function(req, res, next) {
-    res.sendFile(__dirname + "/index.html");
-});
-
-
-var getSunAngles = function() {
-    //var rays = [];
-    var start = new Date(new Date().getFullYear(), 0, 1)
-    var end = new Date(2020, 11, 31)
-    var a = 0;
+    var start = new Date()
+    var end = moment(start).add(1, 'years')
+    var sunsets = [];
     for (var d = start; d <= end; d.setDate(d.getDate() + 1)) {
-        a = new Date(d)
+        var a = new Date(d)
         var sunset = SunCalc.getTimes(a, 32.0353, 34.4628).sunset; // move 30 minutes before (yaniv)
         // gets the azimuth of the sun rays @ sunset in specific place
         var angles = SunCalc.getPosition(sunset, 32.0353, 34.4628).azimuth;
         angles = angles * (180 / Math.PI) + 180;
         // rays.push({date: a, azimuth: angles});
-        var suns = new Sunset({ azimuth: angles, time: sunset });
-        console.log(suns);
-        suns.save(function(err) {
-            if (err) return handleError(err);
-        });
+        var sun = { azimuth: angles, time: sunset };
+        sunsets.push(sun);
     };
-    //console.log(rays);
-};
 
-getSunAngles()
+    var mergedArray = merge(sunsets)
 
-app.get('/streets', function(req, res) {
-    Sunset.find(function(error, streets) {
-        res.send(streets);
-        console.log(streets);
-    });
+    res.send(mergedArray);
 });
 
 
