@@ -4,8 +4,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var SunCalc = require('suncalc');
+var secrets = require('./suncalc');
 
-var mongodbUri = 'mongodb://heroku_bk995c8d:al6k80dkudn1fepu2pu6vnfbb1@ds133418.mlab.com:33418/heroku_bk995c8d';
+var mongodbUri = process.env.MONGODB_URI || secrets.gitURL
 
 mongoose.Promise = global.Promise;
 
@@ -53,6 +54,7 @@ var getSunAngles = function() {
         angles = angles * (180 / Math.PI) + 180;
         // rays.push({date: a, azimuth: angles});
         var suns = new Sunset({ azimuth: angles, time: sunset });
+        console.log(suns);
         suns.save(function(err) {
             if (err) return handleError(err);
         });
@@ -60,12 +62,12 @@ var getSunAngles = function() {
     //console.log(rays);
 };
 
-// getSunAngles()
+getSunAngles()
 
 app.get('/streets', function(req, res) {
     Sunset.find(function(error, streets) {
         res.send(streets);
-        // console.log(streets);
+        console.log(streets);
     });
 });
 
