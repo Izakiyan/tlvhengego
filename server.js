@@ -4,9 +4,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var SunCalc = require('suncalc');
-var secrets = require('./secrets');
 
-var mongodbUri = process.env.MONGODB_URI || secrets.gitURL
+var mongodbUri = process.env.MONGODB_URI || require('./secrets').gitURL;
 
 mongoose.Promise = global.Promise;
 
