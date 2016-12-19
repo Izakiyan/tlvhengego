@@ -77,6 +77,17 @@ a,button{outline: none!important;} /* Prevent ugly blue glow on chrome and safar
 .bloc-sm{
 	padding:20px 50px;
 }
+.bloc-text{
+	padding:20px 50px;
+	width: 70%!important;
+	position: relative;
+    top: 50%;
+    left: 15%;
+    /*margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;*/
+}
 
 
 /* Dark theme */
@@ -532,6 +543,13 @@ a[data-lightbox]:hover img{
 	color: rgba(255,255,255,0.9);
 	background-color: rgba(0,0,0,0.5);
 }
+
+.tc-white-less-info{
+	color: rgba(255,255,255,0.9);
+	background-color: rgba(0,0,0,0.5);
+	text-align: justify;
+	font-size: 1.3em;
+}
 /* Button colour styles */
 
 .wire-btn-carmine-pink{
@@ -717,7 +735,7 @@ a[data-lightbox]:hover img{
 	   padding-left: 10px;
 	   padding-right: 10px;
     }
-    .bloc-xxl,.bloc-xl,.bloc-lg{
+    .bloc-xxl,.bloc-xl,.l-bloc-lg{
         padding: 40px 0;
     }
     .bloc-sm,.bloc-md{
