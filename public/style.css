@@ -360,7 +360,7 @@ button{
     background-color: rgba(0,0,0,0.6);
 }
 .btn-xl{
-	padding: 16px 40px;
+	padding: 10px 16px;
 	font-size: 28px;
 }
 .dropdown a .caret{
@@ -542,6 +542,7 @@ a[data-lightbox]:hover img{
 .tc-white-less{
 	color: rgba(255,255,255,0.9);
 	background-color: rgba(0,0,0,0.5);
+	font-size: 1.2em;
 }
 
 .tc-white-less-info{
@@ -554,7 +555,7 @@ a[data-lightbox]:hover img{
 
 .wire-btn-carmine-pink{
 	color:rgba(243,83,66,1)!important;
-  border-color:rgba(243,83,66,1)!important;
+  	border-color:rgba(243,83,66,1)!important;
 }
 .wire-btn-white{
 	color:#ffffff!important;
