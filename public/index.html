@@ -38,13 +38,19 @@
                     <div class="collapse navbar-collapse navbar-1">
                         <ul class="site-navigation nav navbar-nav">
                             <li>
-                                <a onclick="scrollToTarget('#services')">Video</a>
+                                <a onclick="scrollToTarget('#henge')">Henge?</a>
                             </li>
                             <!-- <li>
                             <a  onclick="scrollToTarget('#map')">Map</a>
                         </li> -->
                             <li>
-                                <a onclick="scrollToTarget('#porfolio')">#TLV_henge</a>
+                                <a onclick="scrollToTarget('#events')">Next Events</a>
+                            </li>
+                            <li>
+                                <a onclick="scrollToTarget('#porfolio')">#TLVhenge</a>
+                            </li>
+                            <li>
+                                <a onclick="scrollToTarget('#video')">Video</a>
                             </li>
                             <li>
                                 <a onclick="scrollToTarget('#team')">Team</a>
@@ -65,11 +71,11 @@
                             Twice a year the sun aligns with the midtown grid in NYC.
                             <br /> These days are called Manhattanhenge.
                             <br />
-                            <br /> Now you can discover henge events happening in <span style="color:rgba(243,83,66,1)">Tel Aviv</span>, if you know when and where to look!
+                            <br /> Now you can discover henge events happening in <span style="color:rgba(243,83,66,1)">Tel Aviv</span>,<br>if you know when and where to look!
                         </p>
                         <div class="text-center">
-                            <a target="_blank" class="btn  btn-xl btn-wire wire-btn-carmine-pink" ng-href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{nextEvent.sunMatch.startime}}/{{nextEvent.sunMatch.eventime}}&location={{nextEvent.streetMatch.streetName}}&text=Henge Sunset Tonight @ {{nextEvent.streetMatch.streetName}} street!&details=We'd love to hear from you! :P%0A%0A--%0Ahttp://TLVhenge.com%0A%0Acontact@TLVhenge.com
-                        ">Get The Next TLVHenge!</a>
+                            <a target="_blank" class="btn btn-xl btn-wire wire-btn-carmine-pink" ng-href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{nextEvent.sunMatch.startime}}/{{nextEvent.sunMatch.eventime}}&location={{nextEvent.streetMatch.streetName}}&text=Henge Sunset Tonight @ {{nextEvent.streetMatch.streetName}} street!&details=We'd love to hear from you! :P%0A%0A--%0Ahttp://TLVhenge.com%0A%0Acontact@TLVhenge.com
+                        ">Get The Next TLVhenge!</a>
                         </div>
                     </div>
                 </div>
@@ -77,10 +83,10 @@
         </div>
         <!-- header END -->
         <!-- services -->
-        <div class="bloc l-bloc bgc-white" id="services">
-            <div id="nycmovie" class="container bloc-lg">
+        <div class="bloc l-bloc bgc-white" id="henge">
+            <div class="container bloc-lg">
                 <div class="row">
-                    <h2 class="text-center mg-md">Manhattanhenge?..<br>
+                    <h2 class="text-center mg-md">TLVhenge? Manhattanhenge?<br>
                                                 What is it all about?</h2>
                     <div class="text-center bloc l-bloc">
 
@@ -90,18 +96,8 @@
 
                         Tel Aviv grid system is asymmetric thus, the event occurs several times during the year. <br>
 
-                        Use #TLVHenge in instagram to help us find the best street so we can make an official henge day in Tel Aviv!
+                        Use #TLVhenge in instagram to help us find the best street so we can make an official Henge day in Tel Aviv!
                         </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bloc l-bloc bgc-white" id="services">
-            <div id="nycmovie" class="container bloc-lg">
-                <div class="row">
-                    <h2 class="text-center mg-md"> This is how it looks in NYC</h2>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SsKmUf3jBPc"></iframe>
                     </div>
                 </div>
             </div>
@@ -130,6 +126,60 @@
                 </div>
             </div>
             <!-- porfolio END -->
+            <div id="events" style="padding:40px;">
+                
+<!-- Table testing -->
+                
+                <!-- <div id="table">
+                <form>
+                    <label for="predicate">selected predicate:</label>
+                    <select class="form-control" id="predicate" ng-model="selectedPredicate" ng-options="predicate for predicate in predicates"></select>
+                </form>
+                <table st-table="rowCollection" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th st-sort="StreetName">street name</th>
+                        <th st-sort="lastName">last name</th>
+                        <th st-sort="birthDate">birth date</th>
+                        <th st-sort="balance">balance</th>
+                        <th>email</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input st-search="StreetName" placeholder="search for streetname" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th colspan="3">
+                            <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <input st-search="{{selectedPredicate}}" placeholder="bound predicate" class="input-sm form-control" type="search"/>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="event in rowCollection">
+                        <td>{{event.streetMatch.streetName | uppercase}}</td>
+                        <td>{{row.lastName}}</td>
+                        <td>{{row.birthDate | date}}</td>
+                        <td>{{row.balance | currency}}</td>
+                        <td><a ng-href="mailto:{{row.email}}">email</a></td>
+                    </tr>
+                    </tbody>
+                </table> -->
+                
+<!-- Table testing -->
+                    
+                </div>
+
+                <div style="text-align:center">
+                    <h3 style="color: rgba(243,83,66,1)">All Next Events</h3>
+                    <br>
+                    <p ng-repeat="event in henges">
+                        {{event.sunMatch.time}} {{}}@{{event.streetMatch.streetName}} // {{event.streetMatch.streetAngle}}&deg; // Sun Azimuth: {{event.sunMatch.azimuth}}&deg;
+                        <br> ***************************
+                    </p>
+                </div>
+            </div>
             <!-- testimonials -->
             <div class="bloc bgc-white l-bloc" id="bloc-6">
                 <div class="container bloc-md">
@@ -137,18 +187,27 @@
                         <div class="col-md-8 col-md-offset-2">
                             <div class="active item" id="team">
                                 <div class="profile-circle">
-                                    <h2 style="text-align:center">TEAM</h2>
-                                    <a href="https://il.linkedin.com/in/yanivizaki" target="_blank">
+                        <h2 style="text-align:center">TEAM</h2>
+                        <a href="https://il.linkedin.com/in/yanivizaki" target="_blank">
                                         <img id="yaniv" src="https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/1/000/271/020/30834c5.jpg" class="img-responsive img-circle center-block img-frame-rd-md" alt="member" />
-                                    </a>
-                                    <a href="https://il.linkedin.com/in/oriel-bachar-56187654" target="_blank">
+                        </a>
+                        <a href="https://il.linkedin.com/in/oriel-bachar-56187654" target="_blank">
                                         <img id="oriel" src="https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAAW1AAAAJDg3NzBmOTBlLTkyNmItNGQxMS05ZTA3LTNiMTk4OTBjMDI4MQ.jpg" class="img-responsive img-circle  img-frame-rd-md" alt="member" />
-                                    </a>
+                        </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-8 col-md-offset-2 text-center mg-md"><strong>Oriel Bachar</strong>
+                            <br><a href="mailto:oriel@tlvhenge.com">oriel@tlvhenge.com</a></div>
+                    </div>
+                    <h4 style="text-align:center"> and </h4>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-8 col-md-offset-2 text-center mg-md"><strong>Yaniv Izaki</strong>
+                            <br><a href="mailto:yaniv@tlvhenge.com">yaniv@tlvhenge.com</a></div>
+                    </div>
             </div>
             <!-- testimonials END -->
             <!-- Footer - quote END -->
@@ -157,25 +216,18 @@
             class="fa fa-chevron-up"></span></a>
             <!-- ScrollToTop Button END-->
             <!-- Footer - bloc-8 -->
-            <div class="row">
-                <div class="col-xs-12 col-md-8 col-md-offset-2 text-center mg-md"><strong>Oriel Bachar</strong>
-                    <br><a href="mailto:oriel@tlvhenge.com">oriel@tlvhenge.com</a></div>
-            </div>
-            <h4 style="text-align:center"> and </h4>
-            <div class="row">
-                <div class="col-xs-12 col-md-8 col-md-offset-2 text-center mg-md"><strong>Yaniv Izaki</strong>
-                    <br><a href="mailto:yaniv@tlvhenge.com">yaniv@tlvhenge.com</a></div>
-            </div>
-            <div style="padding:40px;">
-                <div style="text-align:center">
-                    <h3 style="color: rgba(243,83,66,1)">All Events</h3>
-                    <br>
-                    <p ng-repeat="event in henges">
-                        {{event.sunMatch.time}} {{}}@{{event.streetMatch.streetName}} // {{event.streetMatch.streetAngle}}&deg; // Sun Azimuth: {{event.sunMatch.azimuth}}&deg;
-                        <br> ***************************
-                    </p>
+            <div class="bloc l-bloc bgc-white" id="video">
+                <div id="nycmovie" class="container bloc-lg">
+                    <div class="row">
+                        <h2 class="text-center mg-md"> This is how it looks in NYC</h2>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SsKmUf3jBPc"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
+            
             <!-- <div class="bloc bgc-platinum l-bloc" id="map">
         <div class="container bloc-lg">
             <div class="row">
