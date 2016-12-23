@@ -89,6 +89,13 @@ a,button{outline: none!important;} /* Prevent ugly blue glow on chrome and safar
     height: 100px;*/
 }
 
+.bloc-video{
+	padding:80px 50px;
+	width: 65%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 
 /* Dark theme */
 
