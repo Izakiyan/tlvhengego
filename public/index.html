@@ -104,6 +104,34 @@
         <!-- services END -->
         <!-- clients -->
         <!-- clients END -->
+
+<!-- Table -->
+                
+    <div id="events" style="text-align:center">
+        <h2 style="color: rgba(243,83,66,1)">All Next Events</h2>
+                    <br>
+        <table st-table="rowCollection" class="table table-striped">
+            <thead>
+            <tr>
+                <th st-sort="streetName" style="text-align:center; font-size:1.7em" >Street Name</th>
+                <th st-sort="hengeDate" style="text-align:center; font-size:1.7em" >Henge Date</th>
+                <th st-sort="streetAngle" style="text-align:center; font-size:1.7em" >Street Angle</th>
+                <th st-sort="sunAngle" style="text-align:center; font-size:1.7em" >Sun Angle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="event in henges">
+                <td>{{event.streetMatch.streetName}}</td>
+                <td>{{event.sunMatch.time | date}}</td>
+                <td>{{event.streetMatch.streetAngle}}</td>
+                <td>{{event.sunMatch.azimuth}}</td>
+                <!-- <td><a ng-href="mailto:{{row.email}}">email</a></td> -->
+            </tr>
+            </tbody>
+        </table>
+                
+<!-- Table -->
+
         <!-- porfolio -->
         <div class="bloc l-bloc bgc-white" id="porfolio">
             <div class="container bloc-lg">
@@ -125,60 +153,7 @@
                 </div>
             </div>
             <!-- porfolio END -->
-            <div id="events" style="padding:40px;">
-                
-<!-- Table testing -->
-                
-                <!-- <div id="table">
-                <form>
-                    <label for="predicate">selected predicate:</label>
-                    <select class="form-control" id="predicate" ng-model="selectedPredicate" ng-options="predicate for predicate in predicates"></select>
-                </form>
-                <table st-table="rowCollection" class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th st-sort="StreetName">street name</th>
-                        <th st-sort="lastName">last name</th>
-                        <th st-sort="birthDate">birth date</th>
-                        <th st-sort="balance">balance</th>
-                        <th>email</th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <input st-search="StreetName" placeholder="search for streetname" class="input-sm form-control" type="search"/>
-                        </th>
-                        <th colspan="3">
-                            <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
-                        </th>
-                        <th>
-                            <input st-search="{{selectedPredicate}}" placeholder="bound predicate" class="input-sm form-control" type="search"/>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="event in rowCollection">
-                        <td>{{event.streetMatch.streetName | uppercase}}</td>
-                        <td>{{row.lastName}}</td>
-                        <td>{{row.birthDate | date}}</td>
-                        <td>{{row.balance | currency}}</td>
-                        <td><a ng-href="mailto:{{row.email}}">email</a></td>
-                    </tr>
-                    </tbody>
-                </table> -->
-                
-<!-- Table testing -->
-                    
-                </div>
-
-                <div style="text-align:center">
-                    <h3 style="color: rgba(243,83,66,1)">All Next Events</h3>
-                    <br>
-                    <p ng-repeat="event in henges">
-                        {{event.sunMatch.time}} {{}}@{{event.streetMatch.streetName}} // {{event.streetMatch.streetAngle}}&deg; // Sun Azimuth: {{event.sunMatch.azimuth}}&deg;
-                        <br> ***************************
-                    </p>
-                </div>
-            </div>
+            
             <!-- testimonials -->
             <div class="bloc bgc-white l-bloc" id="bloc-6">
                 <div class="container bloc-md">
@@ -186,7 +161,7 @@
                         <div class="col-md-8 col-md-offset-2">
                             <div class="active item" id="team">
                                 <div class="profile-circle">
-                        <h2 style="text-align:center">TEAM</h2>
+                        <h2 style="text-align:center;">TEAM</h2>
                         <a href="https://il.linkedin.com/in/yanivizaki" target="_blank">
                                         <img id="yaniv" src="https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/1/000/271/020/30834c5.jpg" class="img-responsive img-circle center-block img-frame-rd-md" alt="member" />
                         </a>
@@ -215,16 +190,18 @@
             class="fa fa-chevron-up"></span></a>
             <!-- ScrollToTop Button END-->
             <!-- Footer - bloc-8 -->
-            <div class="bloc l-bloc bgc-white" id="video">
-                <div id="nycmovie" class="container bloc-lg">
+            
+
+            <!-- <div class="bloc l-bloc bgc-white" id="video"> class="container bloc-lg"-->
+                <div id="nycmovie" class="bloc-video">
                     <div class="row">
-                        <h2 class="text-center mg-md"> This is how it looks in NYC</h2>
+                        <h2 class="text-center mg-md" style="color: rgba(243,83,66,1)"> This is how it looks in NYC</h2>
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SsKmUf3jBPc"></iframe>
                         </div>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
             
             
             <!-- <div class="bloc bgc-platinum l-bloc" id="map">
@@ -243,6 +220,7 @@
             <script type="text/javascript" src="calendar.js"></script>
             <script type="text/javascript" src="app.js"></script>
             <script type="text/javascript" src="hengeCtrl.js"></script>
+            <script type="text/javascript" src="tableCtrl.js"></script>
             <script type="text/javascript" src="serviceHenge.js"></script>
 </body>
 <!-- Google Analytics -->
