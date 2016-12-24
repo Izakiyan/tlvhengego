@@ -70,11 +70,11 @@
                             Twice a year the sun aligns with the midtown grid in NYC.
                             <br /> These days are called Manhattanhenge.
                             <br />
-                            <br /> Now you can discover henge events happening in <span style="color:rgba(243,83,66,1)">Tel Aviv</span>,<br>if you know when and where to look!
+                            <br /> Discover henge events happening in <span style="color:rgba(243,83,66,1)">Tel Aviv, Israel</span>.<br>Add the next event to your calendar.
                         </p>
                         <div class="text-center">
-                            <a target="_blank" class="btn btn-xl btn-wire wire-btn-carmine-pink" ng-href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{nextEvent.sunMatch.startime}}/{{nextEvent.sunMatch.eventime}}&location={{nextEvent.streetMatch.streetName}}&text=Henge Sunset Tonight @ {{nextEvent.streetMatch.streetName}} street!&details=We'd love to hear from you! :P%0A%0A--%0Ahttp://TLVhenge.com%0A%0Acontact@TLVhenge.com
-                        ">Get The Next TLVhenge!</a>
+                            <a target="_blank" class="btn btn-xl btn-wire wire-btn-carmine-pink" ng-href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{nextEvent.sunMatch.startime}}/{{nextEvent.sunMatch.eventime}}&location={{nextEvent.streetMatch.streetName}}&text=Henge Sunset Tonight @ {{nextEvent.streetMatch.streetName}} street, Tel-Aviv!&details=We'd love to hear from you! :P%0A%0A--%0Ahttp://tlvhenge.com%0A%0Acontact@tlvhenge.com
+                        ">Add The Next TLVhenge</a>
                         </div>
                     </div>
                 </div>
@@ -85,17 +85,15 @@
         <div class="bloc l-bloc bgc-white" id="henge">
             <div class="container bloc-lg">
                 <div class="row">
-                    <h2 class="text-center mg-md">TLVhenge? Manhattanhenge?<br>
-                                                What is it all about?</h2>
+                    <h2 class="text-center mg-md">From Manhattan to Tel-Aviv</h2>
                     <div class="text-center bloc l-bloc">
 
                     <p class="text-center mg-lg bloc-text tc-white-less-info">
-                            Manhattanhenge — sometimes referred to as the Manhattan Solstice,
-                        is an event during which the setting sun is aligned with the east–west streets of the main street grid of Manhattan, New York City.<br><br> 
+                            Manhattanhenge - sometimes referred to as the Manhattan Solstice, is an event during which the setting sun is aligned with the east–west streets of the main street grid of Manhattan, New York City.<br><br> 
 
-                        Tel Aviv grid system is asymmetric thus, the event occurs several times during the year. <br>
+                        The first shot of the event is recorded back to the year 2001 in New York City, since then Manhttanhenge has gain recognition among photographers and romantic couples who want to capture a unique sunset effect in the background. <br>
 
-                        Use #TLVhenge in instagram to help us find the best street so we can make an official Henge day in Tel Aviv!
+                        Other cities such as Toronto, Montreal and Chicago have chosen to follow and adapt Henge days of their own. Now we have made the first step toward finding our own official henge day in Tel Aviv!
                         </p>
                     </div>
                 </div>
@@ -122,7 +120,7 @@
             <tbody>
             <tr ng-repeat="event in henges">
                 <td>{{event.streetMatch.streetName}}</td>
-                <td>{{event.sunMatch.time | date}}</td>
+                <td>{{event.sunMatch.time | date:'medium'}}</td>
                 <td>{{event.streetMatch.streetAngle}}</td>
                 <td>{{event.sunMatch.azimuth}}</td>
                 <!-- <td><a ng-href="mailto:{{row.email}}">email</a></td> -->
@@ -138,7 +136,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <h2 class="text-center mg-md ">
-                        Can You Get a Better Shot of #TLV_Henge?
+                        Show your #TLVHenge
                     </h2>
                     </div>
                 </div>
@@ -146,7 +144,7 @@
                     <div class="bloc">
                         <img class="bloc" src="img/HeroshotTH.jpg" />
                         <p class="text-center sub-heading" style="font-size: 16px">
-                        Tel Aviv street grids are complex and asymetrical, unlike NYC Manhattan island ;)
+                        We seek to find the best street for declaring an official Tel Aviv Henge day. For that we invite you to take your best shot under the #tlvhenge on Instagram. The winner picture will be added to an upcoming Wikipedia, credits will be given to the photographer.
                             <br />
                         </p>
                     </div>
