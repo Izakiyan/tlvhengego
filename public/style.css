@@ -1040,3 +1040,7 @@ a[data-lightbox]:hover img {
 #fbbtn {
     margin: 0 4px;
 }
+
+.ig_image {
+    margin: 5px;
+}
