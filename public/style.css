@@ -1026,3 +1026,17 @@ a[data-lightbox]:hover img {
         display: none;
     }
 }
+
+
+/*mobile size*/
+
+@media only screen and (max-width: 768px) {
+    .bloc-text {
+        width: 90% !important;
+        left: 5% !important;
+    }
+}
+
+#fbbtn {
+    margin: 0 4px;
+}
