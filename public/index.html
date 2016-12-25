@@ -37,7 +37,7 @@
                     <div class="collapse navbar-collapse navbar-1">
                         <ul class="site-navigation nav navbar-nav">
                             <li>
-                                <a onclick="scrollToTarget('#henge')">Henge?</a>
+                                <a onclick="scrollToTarget('#henge')">Henge</a>
                             </li>
                             <!-- <li>
                             <a  onclick="scrollToTarget('#map')">Map</a>
@@ -48,9 +48,9 @@
                             <li>
                                 <a onclick="scrollToTarget('#porfolio')">#TLVhenge</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a onclick="scrollToTarget('#video')">Video</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a onclick="scrollToTarget('#team')">Team</a>
                             </li>
@@ -93,7 +93,7 @@
 
                         The first shot of the event is recorded back to the year 2001 in New York City, since then Manhttanhenge has gain recognition among photographers and romantic couples who want to capture a unique sunset effect in the background. <br>
 
-                        Other cities such as Toronto, Montreal and Chicago have chosen to follow and adapt Henge days of their own. Now we have made the first step toward finding our own official henge day in Tel Aviv!
+                        Other cities such as Toronto, Montreal and Chicago have chosen to follow and adopt Henge Days of their own. Now we have taken the first steps toward declaring an official Henge Day in Tel Aviv!
                         </p>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
 <!-- Table -->
                 
     <div id="events" style="text-align:center">
-        <h2 style="color: rgba(243,83,66,1)">All Next Events</h2>
+        <h2 style="color: rgba(243,83,66,1)">Next Events</h2>
                     <br>
         <table st-table="rowCollection" class="table table-striped">
             <thead>
@@ -121,8 +121,8 @@
             <tr ng-repeat="event in henges">
                 <td>{{event.streetMatch.streetName}}</td>
                 <td>{{event.sunMatch.time | date:'medium'}}</td>
-                <td>{{event.streetMatch.streetAngle}}</td>
-                <td>{{event.sunMatch.azimuth}}</td>
+                <td>{{event.streetMatch.streetAngle}}&deg;</td>
+                <td>{{event.sunMatch.azimuth | number:2}}&deg;</td>
                 <!-- <td><a ng-href="mailto:{{row.email}}">email</a></td> -->
             </tr>
             </tbody>
@@ -144,7 +144,8 @@
                     <div class="bloc">
                         <img class="bloc" src="img/HeroshotTH.jpg" />
                         <p class="text-center sub-heading" style="font-size: 16px">
-                        We seek to find the best street for declaring an official Tel Aviv Henge day. For that we invite you to take your best shot under the #tlvhenge on Instagram. The winner picture will be added to an upcoming Wikipedia, credits will be given to the photographer.
+                        We invite you to post your best shot of a #tlvhenge on Instagram. The winning picture will be added to an upcoming Wikipedia, credits will be given to the photographer.<br>
+                        In addition, your photos will help us chose the best street to celebrate the official Tel Aviv Henge day.
                             <br />
                         </p>
                     </div>
@@ -191,14 +192,14 @@
             
 
             <!-- <div class="bloc l-bloc bgc-white" id="video"> class="container bloc-lg"-->
-                <div id="nycmovie" class="bloc-video">
+                <!-- <div id="nycmovie" class="bloc-video">
                     <div class="row">
                         <h2 class="text-center mg-md" style="color: rgba(243,83,66,1)"> This is how it looks in NYC</h2>
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SsKmUf3jBPc"></iframe>
                         </div>
                     </div>
-                </div>
+                </div> -->
             <!-- </div> -->
             
             
