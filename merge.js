@@ -14,10 +14,10 @@
  var hengeStreet = [
      { "streetName": "Bograshov, Tel Aviv", "streetAngle": 298.7, "xW": 32.078043, "yW": 34.76765, "xE": 32.074106, "yE": 34.775262 },
      { "streetName": "HaShalom, Tel Aviv", "streetAngle": 290.1, "xW": 32.073205, "yW": 34.792106, "xE": 32.070341, "yE": 34.801687 },
-     { "streetName": "Daniel 14, Tel Aviv", "streetAngle": 290.4, "xW": 32.068878, "yW": 34.763334, "xE": 32.068361, "yE": 34.764893 },
+     { "streetName": "Daniel, Tel Aviv", "streetAngle": 290.4, "xW": 32.068878, "yW": 34.763334, "xE": 32.068361, "yE": 34.764893 },
      { "streetName": "Yona HaNavi, Tel Aviv", "streetAngle": 287.6, "xW": 32.07306, "yW": 34.764986, "xE": 32.071942, "yE": 34.769106 },
      { "streetName": "Nechemiah, Tel Aviv", "streetAngle": 289.8, "xW": 32.069551, "yW": 34.763656, "xE": 32.068933, "yE": 34.765641 },
-     { "streetName": "Allenby (36), Tel Aviv", "streetAngle": 288.3, "xW": 32.073642, "yW": 34.765459, "xE": 32.072751, "yE": 34.768678 },
+     { "streetName": "Allenby, Tel Aviv", "streetAngle": 288.3, "xW": 32.073642, "yW": 34.765459, "xE": 32.072751, "yE": 34.768678 },
      { "streetName": "Ge'ula, Tel Aviv", "streetAngle": 287.6, "xW": 32.072419, "yW": 34.764728, "xE": 32.071178, "yE": 34.769415 },
      { "streetName": "HaRav Kuk, Tel Aviv", "streetAngle": 288.7, "xW": 32.071819, "yW": 34.76449, "xE": 32.070705, "yE": 34.768331 },
      { "streetName": "HaRav Ahronson, Tel Aviv", "streetAngle": 287.2, "xW": 32.071182, "yW": 34.764453, "xE": 32.070573, "yE": 34.766738 },
