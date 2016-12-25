@@ -26,21 +26,22 @@ app.controller("mapCtrl", function($scope, uiGmapGoogleMapApi, serviceHenge) {
     ]
 
     $scope.marker = {};
+    $scope.map = {};
 
     serviceHenge.getAll().then(function() {
-        var nextStreet = serviceHenge.getNextEvent().streetMatch;
+
+        var nextStreet = serviceHenge.getNextEvent().streetMatch.streetName;
 
         uiGmapGoogleMapApi.then(function(maps) {
-            var areaLat = 32.0678844;
-            var areaLng = 34.760827;
-            $scope.map = { center: { latitude: nextStreet.xE, longitude: nextStreet.yE }, zoom: areaZoom };
             $scope.options = { scrollwheel: true };
             markers.forEach(function(marker) {
-                if (marker.title === nextStreet.streetName) {
+                if (marker.title === nextStreet) {
                     $scope.marker = marker;
+                    $scope.map = { center: { latitude: marker.coords.latitude, longitude: marker.coords.longitude }, zoom: areaZoom };
                 }
             });
-        });
+        })
+
     }).catch(function(error) {
         console.log(error);
     });
