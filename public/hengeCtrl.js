@@ -1,21 +1,10 @@
 app.controller('hengeCtrl', function($scope, serviceHenge) {
 
     serviceHenge.getAll().then(function() {
-        $scope.nextEvent = serviceHenge.getNextEvent();
+        $scope.nextEvent = serviceHenge.getNextEvent()
         $scope.henges = serviceHenge.hengeMoments;
+    }).catch(function(error) {
+        console.log(error);
     });
 
 });
-
-
-// .then(function () {
-//   $scope.hengeMoment = serviceHenge.hengeMoment
-//   });
-//
-//
-//
-// $scope.name = "hello";
-// $scope.firstname = "oriel"
-// $scope.changeName = function() {
-//       $scope.lastname = "Nelly"
-//     };

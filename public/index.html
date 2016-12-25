@@ -140,11 +140,11 @@
             </table>
         </div>
         <div class="container bloc-md">
-            <h2 class="text-center mg-md">Today's TLVhenge Location</h2>
+            <h2 class="text-center mg-md">Next TLVhenge Location</h2>
             <div id="map_canvas">
                 <div ng-controller="mapCtrl">
                     <ui-gmap-google-map center="map.center" options="options" zoom="map.zoom">
-                        <ui-gmap-marker ng-repeat="m in marker" coords="m.coords" idkey="m.id"></ui-gmap-marker>
+                        <ui-gmap-marker coords="marker.coords" idkey="marker.id" options="{title:marker.title}"></ui-gmap-marker>
                     </ui-gmap-google-map>
                 </div>
             </div>

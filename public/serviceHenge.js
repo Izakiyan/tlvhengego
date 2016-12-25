@@ -10,7 +10,7 @@ app.factory('serviceHenge', ['$http', function($http) {
         for (var i = 0; i < hengeMoments.length; i++) {
             if (hengeMoments[i].sunMatch.time >= today) {
                 nextEvent = hengeMoments[i];
-                nextEvent = addEvenetime(nextEvent);
+                nextEvent = addEventTime(nextEvent);
                 return nextEvent;
             }
         };
@@ -20,7 +20,7 @@ app.factory('serviceHenge', ['$http', function($http) {
         return this.substr(0, index) + character + this.substr(index + character.length);
     };
 
-    var addEvenetime = function(event) {
+    var addEventTime = function(event) {
         var date = "";
         var newdate = "";
         var startdate = "";
