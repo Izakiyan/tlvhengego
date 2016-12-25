@@ -15,19 +15,24 @@ app.controller("mapCtrl", function($scope, uiGmapGoogleMapApi, serviceHenge) {
         "title": "Bugrashov"
     }]
 
-    uiGmapGoogleMapApi.then(function(maps) {
-        $scope.map = { center: { latitude: areaLat, longitude: areaLng }, zoom: areaZoom };
-        $scope.options = { scrollwheel: true };
-        // $scope.marker = {coords: {latitude: 32.0724804, longitude: 34.7962566} }
-        $scope.marker = {};
-        //warning we don't know if the henge service is populated yet?
+    $scope.marker = {};
+
+    serviceHenge.getAll().then(function() {
         var nextStreet = serviceHenge.getNextEvent().streetMatch.streetName;
-        markers.forEach(function(marker) {
-            if (marker.title === nextStreet) {
-                $scope.marker = marker;
-            }
+        uiGmapGoogleMapApi.then(function(maps) {
+            $scope.map = { center: { latitude: areaLat, longitude: areaLng }, zoom: areaZoom };
+            $scope.options = { scrollwheel: true };
+            markers.forEach(function(marker) {
+                if (marker.title === nextStreet) {
+                    $scope.marker = marker;
+                }
+            });
         });
+    }).catch(function(error) {
+        console.log(error);
     });
+
+
 });
 
 // angular.copy($scope.map.center)
