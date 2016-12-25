@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var SunCalc = require('suncalc');
 var moment = require('moment')
+var favicon = require('serve-favicon');
 
 var merge = require('./merge')
 
@@ -11,6 +12,8 @@ app.set('port', (process.env.PORT || 3000));
 
 app.use(express.static('public'));
 app.use('/node_modules', express.static('node_modules'));
+
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
