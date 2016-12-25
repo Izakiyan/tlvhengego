@@ -29,7 +29,7 @@
      { "streetName": "Jabotinsky, Tel Aviv", "streetAngle": 281.5, "xW": 32.089823, "yW": 34.772457, "xE": 32.087031, "yE": 34.788264 },
      { "streetName": "Nordau Boulevard, Tel Aviv", "streetAngle": 277.1, "xW": 32.092725, "yW": 34.77355, "xE": 32.091825, "yE": 34.782712 },
      { "streetName": "Yehuda Hayamit, Tel Aviv", "streetAngle": 276.2, "xW": 32.050277, "yW": 34.751627, "xE": 32.049612, "yE": 34.758601 },
-     { "streetName": "Frishman, Tel Aviv", "streetAngle": 272.5, "xW": 32.079967, "yW": 34.76748, "xE": 32.079494, "yE": 34.781116 },
+     { "streetName": "Frishman, Tel Aviv", "streetAngle": 272.4, "xW": 32.079967, "yW": 34.76748, "xE": 32.079494, "yE": 34.781116 },
      { "streetName": "Eilat 58, Tel Aviv", "streetAngle": 242.7, "xW": 32.05689, "yW": 34.759933, "xE": 32.059645, "yE": 34.767363 }
  ];
 
