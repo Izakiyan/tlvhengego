@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/sunsets', function(req, res) {
 
     var start = new Date()
-    var end = moment(start).add(1, 'years')
+    var end = moment(start).add(6, 'months')
     var sunsets = [];
     for (var d = start; d <= end; d.setDate(d.getDate() + 1)) {
         var a = new Date(d)
