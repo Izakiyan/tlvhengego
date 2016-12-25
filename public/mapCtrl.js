@@ -7,11 +7,14 @@ app.controller("mapCtrl", function($scope, uiGmapGoogleMapApi) {
 
     uiGmapGoogleMapApi.then(function(maps) {
         $scope.map = { center: { latitude: areaLat, longitude: areaLng }, zoom: areaZoom };
-        $scope.options = { scrollwheel: false };
+        $scope.options = { scrollwheel: true };
         // $scope.marker = {coords: {latitude: 32.0724804, longitude: 34.7962566} }
-        $scope.marker = [
-            { "id": 1, "coords": { "latitude": 32.075685, "longitude": 34.7699893 } },
-            { "id": 2, "coords": { "latitude": 32.058732, "longitude": 34.765759 } }
+        $scope.marker = [{
+                "id": 1,
+                "coords": { "latitude": 32.059617, "longitude": 34.767353 },
+            }
+            // { "id": 2, "coords": { "latitude": 32.075685, "longitude": 34.7699893 } },
+
         ];
     });
 });
