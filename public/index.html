@@ -78,8 +78,11 @@
                             <br /> Discover henge events happening in <span style="color:rgba(243,83,66,1)">Tel Aviv, Israel</span>.
                             <br>Add the next event to your calendar.
                         </p>
-                        <div class="text-center">
+                        <div class="text-center mobile_cal">
                             <a target="_blank" class="btn btn-xl btn-wire wire-btn-carmine-pink" ng-href="https://calendar.google.com/calendar/gpcal?#~calendar:view=e&dates={{nextEvent.sunMatch.startime}}/{{nextEvent.sunMatch.eventime}}&location={{nextEvent.streetMatch.streetName}}&text=Henge Sunset Tonight @ {{nextEvent.streetMatch.streetName}} street, Tel-Aviv!&details=We'd love to hear from you! :P%0A%0A--%0Ahttp://tlvhenge.com%0A%0Acontact@tlvhenge.com">Add The Next TLVhenge</a>
+                        </div>
+                        <div class="text-center desktop_cal">
+                            <a target="_blank" class="btn btn-xl btn-wire wire-btn-carmine-pink" ng-href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{nextEvent.sunMatch.startime}}/{{nextEvent.sunMatch.eventime}}&location={{nextEvent.streetMatch.streetName}}&text=Henge Sunset Tonight @ {{nextEvent.streetMatch.streetName}} street, Tel-Aviv!&details=We'd love to hear from you! :P%0A%0A--%0Ahttp://tlvhenge.com%0A%0Acontact@tlvhenge.com">Add The Next TLVhenge</a>
                         </div>
                     </div>
                 </div>
