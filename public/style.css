@@ -1027,16 +1027,6 @@ a[data-lightbox]:hover img {
     }
 }
 
-
-/*mobile size*/
-
-@media only screen and (max-width: 768px) {
-    .bloc-text {
-        width: 100% !important;
-        left: 0% !important;
-    }
-}
-
 #fbbtn {
     margin: 0 4px;
 }
@@ -1047,4 +1037,17 @@ a[data-lightbox]:hover img {
 
 .angular-google-map-container {
     height: 400px;
+}
+
+
+/*mobile size*/
+
+@media only screen and (max-width: 768px) {
+    .bloc-text {
+        width: 100% !important;
+        left: 0% !important;
+    }
+    .ig_image {
+        padding: 5px;
+    }
 }
