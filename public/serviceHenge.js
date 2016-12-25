@@ -41,7 +41,6 @@ app.factory('serviceHenge', ['$http', function($http) {
 
     var getAll = function() {
         return $http.get('/sunsets').then(function(data) {
-            console.log(data.data);
             angular.copy(data.data, hengeMoments);
         });
     };
